@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 開発ポートフォリオ | AI Development Portfolio</title>
+<meta name="description" content="Claude エージェントを用いて開発した AI アプリケーションの成果物を集めたポートフォリオ。Codebase Analyzer、UX Optimizer、Data Agent Integrator、Chatbot Interaction Panel などを掲載。">
+<meta name="theme-color" content="#e8a4b8">
+<meta name="color-scheme" content="light">
+<!-- Open Graph / SNS -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="AI 開発ポートフォリオ | AI Development Portfolio">
+<meta property="og:description" content="Claude エージェントを用いて開発した AI アプリケーションの成果物ギャラリー。">
+<meta property="og:image" content="images/ux-optimizer.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<!-- Favicon (inline SVG, no external dependency) -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23fff0f3'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='%23e8a4b8'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  /* Warm Elegant Minimal */
+  --rose: #e8a4b8;
+  --rose-dark: #d48fa3;
+  --pink-soft: #ffc0cb;
+  --pink-tint: #fff0f3;
+  --bg: #ffffff;
+  --bg-warm: #faf9f5;
+  --bg-2: #fafafa;
+  --bg-3: #f5f5f5;
+  --text: #333333;
+  --text-2: #888888;
+  --border: #eeeeee;
+  --border-soft: #f5f5f5;
+  --shadow-sm: rgba(0,0,0,0.08) 0 2px 8px;
+  --shadow-md: rgba(0,0,0,0.10) 0 30px 80px;
+  --shadow-accent: rgba(232,164,184,0.4) 0 10px 30px;
+  --serif: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Section divider accent ---------- */
+.divider { width: 48px; height: 3px; background: var(--rose); border-radius: 2px; margin: 0 auto 20px; }
+
+/* ---------- Header ---------- */
+header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 40px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-soft);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand .logo {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center; font-size: 18px;
+  background: var(--pink-tint); color: var(--rose);
+}
+.brand h1 { font-size: 18px; font-weight: 700; letter-spacing: .04em; }
+.brand .sub { font-size: 10px; color: var(--text-2); letter-spacing: .18em; font-weight: 400; }
+nav { display: flex; gap: 30px; }
+nav a { color: var(--text); text-decoration: none; font-size: 14px; font-weight: 400; transition: color .3s ease; }
+nav a:hover { color: var(--rose); }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: var(--bg-warm);
+  text-align: center;
+  padding: 110px 24px 96px;
+}
+.hero .eyebrow { font-size: 12px; letter-spacing: .18em; color: var(--rose); margin-bottom: 22px; }
+.hero h2 {
+  font-size: clamp(26px, 4vw, 36px); font-weight: 400; line-height: 1.8;
+  letter-spacing: .14em; color: var(--text); margin-bottom: 20px;
+  overflow-wrap: break-word;
+}
+.hero p { font-size: 15px; color: var(--text-2); max-width: 620px; margin: 0 auto 36px; letter-spacing: .03em; }
+.btn {
+  display: inline-block; cursor: pointer; text-decoration: none;
+  border-radius: 50px; padding: 10px 28px; font-size: 14px; font-weight: 500;
+  font-family: var(--serif); transition: all .3s ease;
+}
+.btn.primary { background: var(--rose); color: #fff; border: 1px solid var(--rose); }
+.btn.primary:hover { background: var(--rose-dark); box-shadow: var(--shadow-accent); transform: translateY(-2px); }
+
+/* ---------- Works ---------- */
+.section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+.section-head { text-align: center; margin-bottom: 44px; }
+.section-head h3 { font-size: 24px; font-weight: 700; letter-spacing: .05em; }
+.section-head .label { display: block; color: var(--text-2); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; margin-top: 8px; }
+
+.filters { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+.chip {
+  padding: 8px 22px; border-radius: 50px; cursor: pointer;
+  background: transparent; border: 1px solid var(--border);
+  color: var(--text-2); font-size: 13px; font-family: var(--serif); transition: all .3s ease;
+}
+.chip:hover { border-color: var(--rose); color: var(--rose); }
+.chip.active { background: var(--rose); border-color: var(--rose); color: #fff; }
+
+/* uniform 3-column grid */
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.card {
+  background: var(--bg-2); border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden; cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
+.thumb { position: relative; aspect-ratio: 4/3; background: var(--bg-3); overflow: hidden; }
+.thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; z-index: 1; }
+.wireframe {
+  position: absolute; inset: 0; padding: 18px; background: var(--bg-3);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.wf-bar { height: 9px; border-radius: 4px; background: #ececec; }
+.wf-bar.s { width: 40%; } .wf-bar.m { width: 65%; } .wf-bar.l { width: 85%; }
+.wf-block { flex: 1; border-radius: 6px; border: 1px dashed #dcdcdc; display: grid; place-items: center; color: var(--text-2); font-size: 12px; text-align: center; }
+.card-body { padding: 20px 22px 24px; }
+.card-body h4 { font-size: 18px; font-weight: 700; letter-spacing: .03em; margin-bottom: 6px; }
+.card-body .proj { font-size: 13px; color: var(--text-2); }
+.tags { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+.tag {
+  font-size: 11px; font-weight: 600; padding: 5px 14px; border-radius: 50px;
+  background: var(--pink-tint); color: var(--rose);
+}
+
+/* ---------- About / Stats ---------- */
+.about { background: var(--bg-warm); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+.stat { text-align: center; }
+.stat .num { font-size: 36px; font-weight: 700; color: var(--rose); line-height: 1.2; }
+.stat .cap { font-size: 12px; color: var(--text-2); margin-top: 8px; letter-spacing: .1em; }
+
+/* ---------- Modal ---------- */
+.modal {
+  position: fixed; inset: 0; z-index: 100; display: none;
+  align-items: center; justify-content: center; padding: 24px;
+  background: rgba(0,0,0,0.4);
+}
+.modal.open { display: flex; }
+.modal-card {
+  max-width: 680px; width: 100%; background: rgba(255,255,255,0.97);
+  border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-md);
+  animation: scaleIn .3s ease;
+}
+@keyframes scaleIn { from{transform:scale(.95);opacity:0} to{transform:scale(1);opacity:1} }
+@keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.modal-thumb { aspect-ratio: 16/9; position: relative; background: var(--bg-3); }
+.modal-body { padding: 32px; }
+.modal-body h4 { font-size: 22px; font-weight: 700; letter-spacing: .03em; margin-bottom: 6px; }
+.modal-body .proj { color: var(--rose); font-size: 14px; margin-bottom: 16px; }
+.modal-body p { color: var(--text-2); font-size: 15px; }
+.modal-body .tags { margin-top: 20px; }
+.modal-close {
+  position: absolute; top: 14px; right: 16px; z-index: 2;
+  width: 34px; height: 34px; border-radius: 50%; border: none;
+  background: rgba(255,255,255,0.9); color: var(--text-2); font-size: 18px; cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+.modal-close:hover { color: var(--rose); }
+
+/* ---------- Footer ---------- */
+footer { border-top: 1px solid var(--border-soft); padding: 48px 40px; text-align: center; color: var(--text-2); font-size: 13px; }
+footer .links { display: flex; gap: 28px; justify-content: center; margin-bottom: 18px; }
+footer a { color: var(--text); text-decoration: none; transition: color .3s ease; }
+footer a:hover { color: var(--rose); }
+
+@media (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  header { padding: 14px 20px; gap: 10px; }
+  .brand h1 { font-size: 16px; }
+  nav { gap: 18px; }
+  .section { padding: 60px 22px; }
+  .grid { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 420px) {
+  .brand .sub { display: none; }
+  nav { gap: 14px; }
+  nav a { font-size: 13px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">✿</div>
+    <div>
+      <h1>AI 開発ポートフォリオ</h1>
+      <div class="sub">AI DEVELOPMENT PORTFOLIO</div>
+    </div>
+  </div>
+  <nav>
+    <a href="#top">Home</a>
+    <a href="#works">Works</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="eyebrow">SELECTED WORKS</div>
+  <h2>AI で形にした、<br>やさしいアプリケーション。</h2>
+  <p>Claude エージェントを用いて開発した成果物を集めたポートフォリオです。<br>一つひとつのプロジェクトを、ていねいにご紹介します。</p>
+  <a href="#works" class="btn primary">作品を見る</a>
+</section>
+
+<section class="section" id="works">
+  <div class="section-head">
+    <div class="divider"></div>
+    <h3>成果物ギャラリー</h3>
+    <span class="label">Project Gallery</span>
+  </div>
+
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="section about" id="about">
+  <div class="section-head">
+    <div class="divider"></div>
+    <h3>このポートフォリオについて</h3>
+    <span class="label">About</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="num">12+</div><div class="cap">プロジェクト</div></div>
+    <div class="stat"><div class="num">6</div><div class="cap">AI エージェント</div></div>
+    <div class="stat"><div class="num">100%</div><div class="cap">Vanilla JS</div></div>
+    <div class="stat"><div class="num">0</div><div class="cap">外部依存</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="#">GitHub</a>
+    <a href="#">X</a>
+    <a href="#">Mail</a>
+  </div>
+  © 2026 AI Development Portfolio · Built with Claude Code
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-card">
+    <div class="modal-thumb" id="modalThumb">
+      <button class="modal-close" id="modalClose">×</button>
+    </div>
+    <div class="modal-body">
+      <h4 id="modalTitle"></h4>
+      <div class="proj" id="modalProj"></div>
+      <p id="modalDesc"></p>
+      <div class="tags" id="modalTags"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ---------- データ駆動: 成果物を追加するならここに1要素足すだけ ---------- */
+const works = [
+  { title: "Codebase Analyzer", project: "Automated Documentation Agent", img: "images/codebase-analyzer.png", category: "Agent",
+    desc: "リポジトリ構造を解析し、ドキュメントを自動生成するエージェント。ファイルツリーの可視化と Markdown 出力に対応します。", tags: ["Claude", "AST", "Docs"] },
+  { title: "UX Optimizer", project: "NanoBanana Pro UX Agent", img: "images/ux-optimizer.png", category: "UI",
+    desc: "ワイヤーフレームとヒートマップ、コンバージョン改善グラフを提示し、UI 改善案を提案するエージェントです。", tags: ["UX", "Analytics"] },
+  { title: "Data Agent Integrator", project: "Multi-Process Agent Workflows", img: "images/data-agent-integrator.png", category: "Tool",
+    desc: "複数の前処理・データソースを束ね、エージェントのワークフローを統合管理するツールです。", tags: ["Pipeline", "Workflow"] },
+  { title: "Chatbot Interaction Panel", project: "Kawaii Vector Style Chatbot", img: "images/chatbot-panel.png", category: "UI",
+    desc: "やわらかなベクター調 UI のチャットボット。会話履歴とパフォーマンス指標をパネルで表示します。", tags: ["Chatbot", "UI", "Vector"] },
+];
+
+const categories = ["All", ...new Set(works.map(w => w.category))];
+let activeCat = "All";
+
+const grid = document.getElementById('grid');
+const filters = document.getElementById('filters');
+
+function wireframe(title){
+  return `<div class="wireframe">
+    <div class="wf-bar s"></div><div class="wf-bar l"></div>
+    <div class="wf-block">${title}<br><small>images/ に画像を置くと差し替わります</small></div>
+    <div class="wf-bar m"></div>
+  </div>`;
+}
+function thumbHTML(w){
+  return wireframe(w.title) + `<img src="${w.img}" alt="${w.title}" onerror="this.remove()">`;
+}
+function tagsHTML(tags){ return tags.map(t=>`<span class="tag">${t}</span>`).join(''); }
+
+function render(){
+  grid.innerHTML = works
+    .filter(w => activeCat === "All" || w.category === activeCat)
+    .map(w => `
+      <div class="card" data-i="${works.indexOf(w)}">
+        <div class="thumb">${thumbHTML(w)}</div>
+        <div class="card-body">
+          <h4>${w.title}</h4>
+          <div class="proj">${w.project}</div>
+          <div class="tags">${tagsHTML(w.tags)}</div>
+        </div>
+      </div>`).join('');
+}
+
+filters.innerHTML = categories.map(c =>
+  `<div class="chip ${c==='All'?'active':''}" data-cat="${c}">${c}</div>`).join('');
+filters.addEventListener('click', e => {
+  const chip = e.target.closest('.chip'); if(!chip) return;
+  activeCat = chip.dataset.cat;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c===chip));
+  render();
+});
+
+/* ---------- Modal ---------- */
+const modal = document.getElementById('modal');
+grid.addEventListener('click', e => {
+  const card = e.target.closest('.card'); if(!card) return;
+  const w = works[card.dataset.i];
+  document.getElementById('modalTitle').textContent = w.title;
+  document.getElementById('modalProj').textContent = w.project;
+  document.getElementById('modalDesc').textContent = w.desc;
+  document.getElementById('modalTags').innerHTML = tagsHTML(w.tags);
+  const mt = document.getElementById('modalThumb');
+  mt.querySelectorAll('img,.wireframe').forEach(el=>el.remove());
+  const img = new Image(); img.src = w.img; img.alt = w.title;
+  img.style.cssText = "width:100%;height:100%;object-fit:cover;position:absolute;inset:0";
+  img.onerror = () => { img.remove(); mt.insertAdjacentHTML('beforeend', wireframe(w.title)); };
+  mt.appendChild(img);
+  modal.classList.add('open');
+});
+document.getElementById('modalClose').addEventListener('click', ()=>modal.classList.remove('open'));
+modal.addEventListener('click', e => { if(e.target===modal) modal.classList.remove('open'); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') modal.classList.remove('open'); });
+
+render();
+</script>
+</body>
+</html>
