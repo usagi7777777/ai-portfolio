@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI 開発ポートフォリオ | AI Development Portfolio</title>
-<meta name="description" content="Claude エージェントを用いて開発した AI アプリケーションの成果物を集めたポートフォリオ。Codebase Analyzer、UX Optimizer、Data Agent Integrator、Chatbot Interaction Panel などを掲載。">
+<meta name="description" content="医師がAIで事業を動かす開発ポートフォリオ。Kindle出版・有料note講座・動画自動生成工場・SNS自動配信システム・マルチエージェントのAIオフィスなど、実運用中の成果物を掲載。">
 <meta name="theme-color" content="#e8a4b8">
 <meta name="color-scheme" content="light">
 <!-- Open Graph / SNS -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI 開発ポートフォリオ | AI Development Portfolio">
-<meta property="og:description" content="Claude エージェントを用いて開発した AI アプリケーションの成果物ギャラリー。">
+<meta property="og:description" content="医師がAIで事業を動かす開発ポートフォリオ。実運用中のシステムと出版物を掲載。">
 <meta property="og:image" content="images/ux-optimizer.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
@@ -211,7 +211,7 @@ footer a:hover { color: var(--rose); }
 <section class="hero" id="top">
   <div class="eyebrow">SELECTED WORKS</div>
   <h2>AI で形にした、<br>やさしいアプリケーション。</h2>
-  <p>Claude エージェントを用いて開発した成果物を集めたポートフォリオです。<br>一つひとつのプロジェクトを、ていねいにご紹介します。</p>
+  <p>医師として働くかたわら、Claude エージェントと一緒に<br>出版・講座・動画・SNS運用を自動化してきた成果物のポートフォリオです。</p>
   <a href="#works" class="btn primary">作品を見る</a>
 </section>
 
@@ -233,18 +233,19 @@ footer a:hover { color: var(--rose); }
     <span class="label">About</span>
   </div>
   <div class="stats">
-    <div class="stat"><div class="num">12+</div><div class="cap">プロジェクト</div></div>
-    <div class="stat"><div class="num">6</div><div class="cap">AI エージェント</div></div>
-    <div class="stat"><div class="num">100%</div><div class="cap">Vanilla JS</div></div>
-    <div class="stat"><div class="num">0</div><div class="cap">外部依存</div></div>
+    <div class="stat"><div class="num">9+</div><div class="cap">プロジェクト</div></div>
+    <div class="stat"><div class="num">20</div><div class="cap">AI エージェント（社員）</div></div>
+    <div class="stat"><div class="num">8</div><div class="cap">動画講義（自動生成）</div></div>
+    <div class="stat"><div class="num">週21+</div><div class="cap">自動配信コンテンツ</div></div>
   </div>
 </section>
 
 <footer>
   <div class="links">
-    <a href="#">GitHub</a>
-    <a href="#">X</a>
-    <a href="#">Mail</a>
+    <a href="https://github.com/usagi7777777" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/floravita_" target="_blank" rel="noopener">X</a>
+    <a href="https://note.com/moppyandchappy" target="_blank" rel="noopener">note</a>
+    <a href="https://floravita.co" target="_blank" rel="noopener">Floravita</a>
   </div>
   © 2026 AI Development Portfolio · Built with Claude Code
 </footer>
@@ -260,6 +261,7 @@ footer a:hover { color: var(--rose); }
       <div class="proj" id="modalProj"></div>
       <p id="modalDesc"></p>
       <div class="tags" id="modalTags"></div>
+      <p id="modalLink" style="margin-top:16px"></p>
     </div>
   </div>
 </div>
@@ -267,6 +269,17 @@ footer a:hover { color: var(--rose); }
 <script>
 /* ---------- データ駆動: 成果物を追加するならここに1要素足すだけ ---------- */
 const works = [
+  { title: "健診結果で落ち込まないで！", project: "Kindle出版（2026年8月）", img: "images/kdp-book.png", category: "Publication",
+    desc: "初の著書『健診結果で落ち込まないで！ 10年後も健康でいるための「からだの取扱説明書」』。企画・競合分析・原稿整形・表紙生成（Pillow）・入稿検査まで、全工程をAIエージェントと共同制作しました。", tags: ["KDP", "Python", "出版"] },
+  { title: "健診結果の読み方 完全ガイド", project: "有料note + 動画講座8回", img: "images/paid-note.png", category: "Publication",
+    desc: "健診の数字をじぶんで読めるようになる有料記事。購入特典として、AIパイプラインで制作した動画講義（全8回・約28分）付き。", tags: ["note", "動画講義", "TTS"],
+    link: "https://note.com/moppyandchappy/n/n0883a53cb4a9" },
+  { title: "short-factory", project: "キャラ動画 自動生成工場", img: "images/short-factory.png", category: "Production",
+    desc: "台本JSON→読み事故リント→TTS→口パクキャラ合成（Remotion）→Whisper機械検収→縦動画完成までの一気通貫パイプライン。週3本のリールを量産しています。", tags: ["Remotion", "Whisper QC", "Fish Audio"] },
+  { title: "SNS自動配信システム", project: "X Queue Post System", img: "images/x-queue.png", category: "Production",
+    desc: "承認済み原稿キューをcronが毎朝夕に自動投稿。スリープ復帰後の追い実行・遅延検知・文字数の機械検査つき。生成と投稿を分離した安全設計です。", tags: ["Python", "X API", "cron"] },
+  { title: "AIオフィス", project: "20名のAIエージェント組織", img: "images/ai-office.png", category: "Production",
+    desc: "戦略・審査・制作を分担する20名のAI社員による事業運営。薬機法チェックと医学数値照合の二重ゲートを通った成果物だけが公開されます。", tags: ["Multi-Agent", "品質ゲート"] },
   { title: "Codebase Analyzer", project: "Automated Documentation Agent", img: "images/codebase-analyzer.png", category: "Agent",
     desc: "リポジトリ構造を解析し、ドキュメントを自動生成するエージェント。ファイルツリーの可視化と Markdown 出力に対応します。", tags: ["Claude", "AST", "Docs"] },
   { title: "UX Optimizer", project: "NanoBanana Pro UX Agent", img: "images/ux-optimizer.png", category: "UI",
@@ -286,7 +299,7 @@ const filters = document.getElementById('filters');
 function wireframe(title){
   return `<div class="wireframe">
     <div class="wf-bar s"></div><div class="wf-bar l"></div>
-    <div class="wf-block">${title}<br><small>images/ に画像を置くと差し替わります</small></div>
+    <div class="wf-block">${title}</div>
     <div class="wf-bar m"></div>
   </div>`;
 }
@@ -294,6 +307,7 @@ function thumbHTML(w){
   return wireframe(w.title) + `<img src="${w.img}" alt="${w.title}" onerror="this.remove()">`;
 }
 function tagsHTML(tags){ return tags.map(t=>`<span class="tag">${t}</span>`).join(''); }
+function linkHTML(w){ return w.link ? `<a href="${w.link}" target="_blank" rel="noopener" style="color:var(--rose)">作品を見る →</a>` : ''; }
 
 function render(){
   grid.innerHTML = works
