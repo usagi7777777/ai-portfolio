@@ -11,7 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="AI 開発ポートフォリオ | AI Development Portfolio">
 <meta property="og:description" content="医師がAIで事業を動かす開発ポートフォリオ。実運用中のシステムと出版物を掲載。">
-<meta property="og:image" content="images/ux-optimizer.png">
+<meta property="og:image" content="images/kdp-book.png">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Favicon (inline SVG, no external dependency) -->
@@ -233,7 +233,7 @@ footer a:hover { color: var(--rose); }
     <span class="label">About</span>
   </div>
   <div class="stats">
-    <div class="stat"><div class="num">13</div><div class="cap">プロジェクト</div></div>
+    <div class="stat"><div class="num">9</div><div class="cap">プロジェクト</div></div>
     <div class="stat"><div class="num">20</div><div class="cap">AI エージェント（社員）</div></div>
     <div class="stat"><div class="num">8</div><div class="cap">動画講義（自動生成）</div></div>
     <div class="stat"><div class="num">週21+</div><div class="cap">自動配信コンテンツ</div></div>
@@ -293,14 +293,6 @@ const works = [
   { title: "からだ日記", project: "日記方式の健康記録アプリ", img: "images/karada-nikki.png", category: "暮らしの道具",
     desc: "きょうの気分・体重・睡眠・血圧・できたことを、日記帳をとじる感覚で1日1ページに記録。カレンダーと推移グラフで続けるほど変化が見えてきます。ブラウザだけで動く単一HTMLアプリです。", tags: ["Vanilla JS", "単一HTML", "ヘルスログ"],
     link: "https://usagi7777777.github.io/karada-nikki/" },
-  { title: "Codebase Analyzer", project: "Automated Documentation Agent", img: "images/codebase-analyzer.png", category: "Agent",
-    desc: "リポジトリ構造を解析し、ドキュメントを自動生成するエージェント。ファイルツリーの可視化と Markdown 出力に対応します。", tags: ["Claude", "AST", "Docs"] },
-  { title: "UX Optimizer", project: "NanoBanana Pro UX Agent", img: "images/ux-optimizer.png", category: "UI",
-    desc: "ワイヤーフレームとヒートマップ、コンバージョン改善グラフを提示し、UI 改善案を提案するエージェントです。", tags: ["UX", "Analytics"] },
-  { title: "Data Agent Integrator", project: "Multi-Process Agent Workflows", img: "images/data-agent-integrator.png", category: "Tool",
-    desc: "複数の前処理・データソースを束ね、エージェントのワークフローを統合管理するツールです。", tags: ["Pipeline", "Workflow"] },
-  { title: "Chatbot Interaction Panel", project: "Kawaii Vector Style Chatbot", img: "images/chatbot-panel.png", category: "UI",
-    desc: "やわらかなベクター調 UI のチャットボット。会話履歴とパフォーマンス指標をパネルで表示します。", tags: ["Chatbot", "UI", "Vector"] },
 ];
 
 const categories = ["All", ...new Set(works.map(w => w.category))];
