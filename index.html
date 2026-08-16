@@ -233,7 +233,7 @@ footer a:hover { color: var(--rose); }
     <span class="label">About</span>
   </div>
   <div class="stats">
-    <div class="stat"><div class="num">9+</div><div class="cap">プロジェクト</div></div>
+    <div class="stat"><div class="num">13</div><div class="cap">プロジェクト</div></div>
     <div class="stat"><div class="num">20</div><div class="cap">AI エージェント（社員）</div></div>
     <div class="stat"><div class="num">8</div><div class="cap">動画講義（自動生成）</div></div>
     <div class="stat"><div class="num">週21+</div><div class="cap">自動配信コンテンツ</div></div>
@@ -287,6 +287,12 @@ const works = [
   { title: "ストップウォッチ", project: "シンプル計測ツール", img: "images/stopwatch.png", category: "暮らしの道具",
     desc: "勉強や作業のおともに。ラップ計測もできる、やさしい見た目のストップウォッチ。こちらも単一HTMLで完結しています。", tags: ["Vanilla JS", "単一HTML"],
     link: "https://usagi7777777.github.io/stopwatch.html/" },
+  { title: "Floravita 食卓", project: "プライベートシェフ＆管理栄養士アプリ", img: "images/fv-shokutaku.png", category: "暮らしの道具",
+    desc: "年齢・体格・疾患別プリセット（高血圧・糖尿病・CKD・脂質異常症）から、その人専用の1日の栄養枠を自動計算。食事の写真をAIが解析してカロリー・塩分・PFCを推定し、残り枠に合わせてシェフが献立を提案します。栄養成分表示のOCR読取、売り場別の買い物リスト、手帳風の日記帳つき。APIキー不要で使える中継サーバー構成（1日の利用上限つき）です。", tags: ["Gemini AI", "GAS中継", "単一HTML"],
+    link: "https://usagi7777777.github.io/fv-shokutaku/" },
+  { title: "からだ日記", project: "日記方式の健康記録アプリ", img: "images/karada-nikki.png", category: "暮らしの道具",
+    desc: "きょうの気分・体重・睡眠・血圧・できたことを、日記帳をとじる感覚で1日1ページに記録。カレンダーと推移グラフで続けるほど変化が見えてきます。ブラウザだけで動く単一HTMLアプリです。", tags: ["Vanilla JS", "単一HTML", "ヘルスログ"],
+    link: "https://usagi7777777.github.io/karada-nikki/" },
   { title: "Codebase Analyzer", project: "Automated Documentation Agent", img: "images/codebase-analyzer.png", category: "Agent",
     desc: "リポジトリ構造を解析し、ドキュメントを自動生成するエージェント。ファイルツリーの可視化と Markdown 出力に対応します。", tags: ["Claude", "AST", "Docs"] },
   { title: "UX Optimizer", project: "NanoBanana Pro UX Agent", img: "images/ux-optimizer.png", category: "UI",
