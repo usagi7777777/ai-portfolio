@@ -16,6 +16,7 @@ Claude エージェントを用いて開発した AI アプリケーションの
 
 | 作品 | プロジェクト |
 |------|------------|
+| Floravita 顧問役員 | CFO→CAO→CMO→CEO の役員会サブエージェント |
 | Codebase Analyzer | Automated Documentation Agent |
 | UX Optimizer | NanoBanana Pro UX Agent |
 | Data Agent Integrator | Multi-Process Agent Workflows |
